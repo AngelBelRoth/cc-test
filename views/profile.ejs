@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Community Connect Profile</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/4ffa3c6e4a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="page-header text-center">
+      <h1><span class="fa fa-film"></span> Profile Page <span class="fa fa-film"></span></h1>
+      <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+      <!-- LOCAL INFORMATION -->
+      <div class="col-sm-6">
+        <div class="well">
+          <h3><span class="fa fa-user"></span> Local</h3>
+
+          <% if (user.local.email) { %>
+            <p>
+              <strong>id</strong>: <%= user._id %><br>
+                <strong>email</strong>: <%= user.local.email %><br>
+                  <strong>password</strong>: <%= user.local.password %>
+            </p>
+
+            <a href="/unlink/local" class="btn btn-default">Unlink</a>
+            <% } else { %>
+              <a href="/connect/local" class="btn btn-default">Connect Local</a>
+              <% } %>
+
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <h3>Brand:</h3>
+        <% if (user.local.email) { %>
+          <form action="/match" method="POST">
+            <input type="text" placeholder="Brand Name" name="brand">
+            <fieldset>
+              <legend>Business type * (required)</legend>
+              <select name="accountType">
+              <label for="personal-account"><option value="personal-account" type="radio" name="account-type" class="inline"
+                  checked /> Biohacking</label>
+              <label for="food"><option value="food" type="radio" name="account-type" class="inline" /> Food</label>
+              <label for="bevvy"><option value="bevvy" type="radio" name="account-type" class="inline" /> Beverage</label>
+              <label for="medicine"><option value="medicine" type="radio" name="account-type" class="inline" />
+                Medicine</label>
+              <label for="supplement"><option value="supplement" type="radio" name="account-type" class="inline" />
+                Supplement</label>
+              <label for="spiritual"><option value="spiritual" type="radio" name="account-type" class="inline" />
+                Spiritual</label>
+              <label for="psychiatry"><option value="psychiatry" type="radio" name="account-type" class="inline" />
+                Psychiatry</label>
+              <label for="phyisical-theraphy"><option value="phyisical-theraphy" type="radio" name="account-type"
+                  class="inline" />
+                Phyisical Theraphy</label>
+              <label for="software"><option value="software" type="radio" name="account-type" class="inline" /> Software /
+                AI</label>
+              <label for="hardware"><option value="hardware" type="radio" name="account-type" class="inline" /> Hardware /
+                Wearable</label>
+              <label for="publication"><option value="publication" type="radio" name="account-type" class="inline" />
+                Publication</label>
+              <label for="marketing"><option value="marketing" type="radio" name="account-type" class="inline" />
+                Marketing</label>
+              <label for="investor"><option value="investor" type="radio" name="account-type" class="inline" />
+                Investor</label>
+              <label for="other"><option value="other" type="radio" name="account-type" class="inline" /> Other</label>
+              </select>
+            </fieldset>
+            <br>
+            <button type="submit">Find Your Match!</button>
+</form>
+<% } %>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
