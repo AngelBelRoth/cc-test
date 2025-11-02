@@ -7,8 +7,8 @@
 ---
 
 ## 📌 Overview  
-**cc-test** is a lightweight Node.js module built to [describe what it does in one or two sentences: e.g., “validate custom commands in chat bots”, “run quick API endpoint tests”, “serve as a minimal micro-service scaffold”].  
-It aims for clarity, simplicity, and ease of integration with your existing stack.
+**cc-test** is a lightweight Node.js module built to navigate user flow from login, registration, and match page.
+It aims for clarity, simplicity, and ease of integration with existing stack.
 
 ---
 
@@ -32,3 +32,4 @@ npm install
 
 # Run (or build) the module
 npm start
+
